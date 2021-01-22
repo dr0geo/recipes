@@ -1,10 +1,6 @@
 <script>
   const fetchInitialData = async () => {
-    const res = await fetch('https://duofood.eu.pythonanywhere.com/recipe/?format=json', {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
+    const res = await fetch('https://duofood.eu.pythonanywhere.com/recipe/?format=json');
     return await res.json();
   };
 
