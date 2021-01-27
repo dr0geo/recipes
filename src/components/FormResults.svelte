@@ -27,7 +27,7 @@
       {/each}
     </ul>
     <button
-      class="border-2 uppercase font-medium border-transparent text-green-900 bg-yellow-300 block rounded-full p-2 my-3 mx-auto hover:bg-green-200 hover:text-gray-800 transition 300 ease-in-out"
+      class="border-2 uppercase font-medium border-transparent text-green-900 bg-yellow-300 block rounded-full p-2 my-3 mx-auto hover:bg-green-100 hover:text-gray-800 transition duration-300 ease-in-out"
       on:click={handleSubmit}>See recipes</button>
   {:else}
     <p class="text-center py-2 mb-5">You haven't selected any ingredient yet.</p>
