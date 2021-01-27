@@ -4,5 +4,7 @@ import { writable } from 'svelte/store';
 export const selectedMenu = writable(1);
 export const displayMenu = writable(true);
 
-// Ingredients related:
+// User ingredients:
 export const ingredientsList = writable([]);
+// Database ingredients:
+export const ingredientsDatabase = writable([]);
