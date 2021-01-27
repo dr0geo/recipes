@@ -8,54 +8,17 @@
 </script>
 
 <section>
-  <h2>The best recipes of the moment!</h2>
+  <h2 class="bg-green-100 py-2 uppercase text-center font-medium">The best recipes of the moment</h2>
   {#await promise}
-    <p>Recipes are loading...</p>
+    <p class="text-center py-4">Recipes are loading...</p>
   {:then recipes} 
-    <div class="container">
+    <ul class="grid mx-auto grid-cols-1 gap-y-6 gap-x-4 my-4 px-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {#each recipes.results as result}
-        <div class="card">
-          <img src={result.picture} alt={result.name} loading="lazy" />
-          <h3>{result.name}</h3>
-        </div>
+        <li class="bg-gray-50 rounded-md overflow-hidden shadow-md">
+          <img class="block object-cover h-64 w-full" src={result.picture} alt={result.name} loading="lazy" />
+          <h3 class="capitalize py-2 pl-2">{result.name}</h3>
+        </li>
       {/each}
-    </div>
+    </ul>
   {/await}
 </section>
-
-<style>
-  h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 20px auto;
-    text-align: center;
-  }
-
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: auto;
-    max-width: 900px;
-  }
-
-  .card {
-    max-width: 300px;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-  }
-
-  h3 {
-    color: orangered;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
-  }
-</style>

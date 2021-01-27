@@ -16,33 +16,16 @@
     ingredient = '';
     sessionStorage.setItem('ingredients', JSON.stringify($ingredientsList));
   };
-
-
 </script>
 
-<form on:submit|preventDefault={addIngredient}>
-  <input type="text" name="ingredient" placeholder="Enter an ingredient here..." bind:value={ingredient} autocomplete="off" />
-  <button type="submit">Add ingredient</button>
+<form class="flex justify-center my-4" on:submit|preventDefault={addIngredient}>
+  <input 
+    class="border-2 focus:border-green-900 rounded-full py-1 px-2 mr-4 transition 300 ease-in-out text-green-900" 
+    type="text" 
+    name="ingredient" 
+    placeholder="Enter an ingredient here..." bind:value={ingredient} 
+    autocomplete="off" />
+  <button 
+    class="bg-yellow-300 rounded-full border-2 border-transparent p-2 text-green-900 hover:bg-green-200 hover:text-gray-800 transition 300 ease-in-out" 
+    type="submit">Add ingredient</button>
 </form>
-
-<style>
-  form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    justify-content: space-evenly;
-    margin: 30px auto;
-    max-width: 500px;
-  }
-
-  button {
-    background-color: green;
-    border: 2px solid green;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 8px 12px;
-  }
-</style>
